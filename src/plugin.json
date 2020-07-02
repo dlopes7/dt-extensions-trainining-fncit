@@ -1,64 +1,32 @@
 {
-  "name": "custom.remote.python.custom_extension",
+  "name": "custom.remote.python.spacex_davidlopes",
   "version": "1.001",
   "type": "python",
   "entity": "CUSTOM_DEVICE",
+  "favicon": "https://cdn1.iconfinder.com/data/icons/transportation-85/65/rocket-512.png",
   "technologies": [
-    "Custom"
+    "SpaceX"
   ],
-  "metricGroup": "tech.Custom",
+  "metricGroup": "tech.SpaceX.DavidLopes",
   "source": {
-    "package": "custom_extension",
-    "className": "CustomExtension",
+    "package": "spacex_davidlopes",
+    "className": "SpaceXExtension",
     "install_requires": [],
     "activation": "Remote"
   },
   "properties": [],
   "configUI": {
-    "displayName": "Custom Extension",
+    "displayName": "SpaceX - David Lopes",
     "properties": []
   },
   "metrics": [
     {
       "entity": "CUSTOM_DEVICE",
       "timeseries": {
-        "key": "custom_metric",
+        "key": "combustivel",
         "unit": "Count",
-        "displayname": "Custom Metric"
+        "displayname": "Combustivel"
       }
     }
-  ],
-  "ui": {
-    "keymetrics": [
-      {
-        "key": "custom_metric",
-        "displayName": "Custom Metric",
-        "aggregation": "avg"
-      }
-    ],
-    "keycharts": [
-      {
-        "group": "Custom Group",
-        "title": "Custom Title",
-        "series": [
-          {
-            "key": "custom_metric",
-            "mergeaggregation": "AVG"
-          }
-        ]
-      }
-    ],
-    "charts": [
-      {
-        "group": "Custom Group",
-        "title": "Custom Title",
-        "series": [
-          {
-            "key": "custom_metric",
-            "mergeaggregation": "AVG"
-          }
-        ]
-      }
-    ]
-  }
+  ]
 }
