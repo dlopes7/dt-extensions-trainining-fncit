@@ -27,9 +27,12 @@ class SpaceXExtension(RemoteBasePlugin):
             # Manda um valor absoluto
             device.absolute("combustivel", navio.get("fuel"))
 
+            # Adiciona metricas com dimensao
             for motor in navio.get("thrust"):
                 device.absolute("potencia", motor.get("power"), dimensions={"Motor": motor.get("engine")})
 
+            # Adiciona endpoint (topologia)
+            device.add_endpoint(navio.get("ship_ip"))
 
 
 def get_ships() -> List[Dict[str, Any]]:
