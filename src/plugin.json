@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.001",
+  "version": "1.002",
   "type": "python",
   "entity": "CUSTOM_DEVICE",
   "favicon": "https://cdn1.iconfinder.com/data/icons/transportation-85/65/rocket-512.png",
@@ -27,6 +27,49 @@
         "unit": "Count",
         "displayname": "Combustivel"
       }
+    },
+    {
+      "entity": "CUSTOM_DEVICE",
+      "timeseries": {
+        "key": "potencia",
+        "unit": "Percent",
+        "displayname": "Potencia",
+        "dimensions": ["Motor"]
+      }
     }
-  ]
+  ],
+  "ui": {
+    "keycharts": [
+      {
+        "group": "Navio",
+        "title": "Combustivel",
+        "series": [
+          { "key": "combustivel", "displayname": "Combustivel" }
+        ]
+      },
+      {
+        "group": "Navio",
+        "title": "Potencia",
+        "series": [
+          { "key": "potencia", "displayname": "Potencia", "mergeaggregation": "AVG" }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "group": "Navio",
+        "title": "Combustivel",
+        "series": [
+          { "key": "combustivel", "displayname": "Combustivel" }
+        ]
+      },
+      {
+        "group": "Navio",
+        "title": "Potencia",
+        "series": [
+          { "key": "potencia", "displayname": "Potencia"}
+        ]
+      }
+    ]
+  }
 }

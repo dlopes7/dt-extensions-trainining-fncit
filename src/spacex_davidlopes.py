@@ -27,6 +27,10 @@ class SpaceXExtension(RemoteBasePlugin):
             # Manda um valor absoluto
             device.absolute("combustivel", navio.get("fuel"))
 
+            for motor in navio.get("thrust"):
+                device.absolute("potencia", motor.get("power"), dimensions={"Motor": motor.get("engine")})
+
+
 
 def get_ships() -> List[Dict[str, Any]]:
     # Obtem a lista de navios
