@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.004",
+  "version": "1.005",
   "type": "python",
   "entity": "CUSTOM_DEVICE",
   "favicon": "https://cdn1.iconfinder.com/data/icons/transportation-85/65/rocket-512.png",
@@ -14,10 +14,14 @@
     "install_requires": [],
     "activation": "Remote"
   },
-  "properties": [],
+  "properties": [
+    {"key": "url", "type": "String"}
+  ],
   "configUI": {
     "displayName": "SpaceX - David Lopes",
-    "properties": []
+    "properties": [
+      {"key": "url", "displayName": "URL da API de navios", "displayOrder":  1, "displayHint":  "http://ec2-18-232-50-149.compute-1.amazonaws.com/v3/ships"}
+    ]
   },
   "metrics": [
     {

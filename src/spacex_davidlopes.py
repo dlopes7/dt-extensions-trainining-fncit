@@ -17,7 +17,7 @@ class SpaceXExtension(RemoteBasePlugin):
         grupo = self.topology_builder.create_group(f"{meu_nome} Navios", f"{meu_nome} Navios")
 
         # Obtem a lista de navios
-        navios = get_ships()
+        navios = self.get_ships()
         for navio in navios:
             log.info(f"Processando navio {navio.get('ship_name', 'Desconhecido')}")
 
@@ -41,11 +41,9 @@ class SpaceXExtension(RemoteBasePlugin):
 
             device.state_metric("clima", navio.get("weather"))
 
-
-
-def get_ships() -> List[Dict[str, Any]]:
-    # Obtem a lista de navios
-    return requests.get("http://ec2-18-232-50-149.compute-1.amazonaws.com/v3/ships").json()
+    def get_ships(self) -> List[Dict[str, Any]]:
+        # Obtem a lista de navios
+        return requests.get(self.config.get("url")).json()
 
 
 
