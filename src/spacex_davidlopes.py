@@ -34,6 +34,14 @@ class SpaceXExtension(RemoteBasePlugin):
             # Adiciona endpoint (topologia)
             device.add_endpoint(navio.get("ship_ip"))
 
+            # Adiciona propriedades (max 20)
+            device.report_property("Tipo", f"{navio.get('ship_type')}")
+            device.report_property("Ano construido", f"{navio.get('year_built')}")
+            device.report_property("Porto", f"{navio.get('home_port')}")
+
+            device.state_metric("clima", navio.get("weather"))
+
+
 
 def get_ships() -> List[Dict[str, Any]]:
     # Obtem a lista de navios

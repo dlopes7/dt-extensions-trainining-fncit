@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.003",
+  "version": "1.004",
   "type": "python",
   "entity": "CUSTOM_DEVICE",
   "favicon": "https://cdn1.iconfinder.com/data/icons/transportation-85/65/rocket-512.png",
@@ -36,9 +36,20 @@
         "displayname": "Potencia",
         "dimensions": ["Motor"]
       }
+    },
+    {
+      "entity": "CUSTOM_DEVICE",
+      "statetimeseries": {
+        "key": "clima",
+        "displayname": "Clima",
+        "states": ["Fair", "Cloudy", "Sunny", "Rainy", "Stormy", "Snowy", "Windy", "Hail"]
+      }
     }
   ],
   "ui": {
+    "keymetrics": [
+      {"key":  "combustivel", "displayname": "Combustivel", "aggregation": "MAX"}
+    ],
     "keycharts": [
       {
         "group": "Navio",
@@ -52,6 +63,18 @@
         "title": "Potencia",
         "series": [
           { "key": "potencia", "displayname": "Potencia", "mergeaggregation": "AVG" }
+        ]
+      },
+      {
+        "group": "Clima",
+        "title": "Clima",
+        "series": [
+          {
+            "key": "clima",
+            "displayname": "Potencia",
+            "statechart": true,
+            "statecolors": ["#ef651f", "#f5d30f", "#4fd5e0", "#4556d7", "#ffa86c", "#4556d7", "#ffa86c", "#4fd5e0"]
+          }
         ]
       }
     ],
@@ -68,6 +91,18 @@
         "title": "Potencia",
         "series": [
           { "key": "potencia", "displayname": "Potencia"}
+        ]
+      },
+      {
+        "group": "Clima",
+        "title": "Clima",
+        "series": [
+          {
+            "key": "clima",
+            "displayname": "Potencia",
+            "statechart": true,
+            "statecolors": ["#ef651f", "#f5d30f", "#4fd5e0", "#4556d7", "#ffa86c", "#4556d7", "#ffa86c", "#4fd5e0"]
+          }
         ]
       }
     ]
